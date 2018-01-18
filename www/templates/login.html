@@ -1,0 +1,27 @@
+<ion-view view-title="{{view_title}}">
+  <ion-content class="padding" scroll="false">
+    
+
+    	<div class="list list-inset login_details_div">
+          <label class="item item-input">
+              <input type="text" placeholder="University ID" ng-model="data.user_id">
+          </label>
+          <label class="error_field" ng-show="err_user_id">
+              Please enter your University ID.
+          </label>
+          <label class="item item-input">
+              <input type="password" placeholder="Password" ng-model="data.password">
+          </label>
+          <label class="error_field" ng-show="err_password">
+              Please enter your password.
+          </label>
+      </div>
+      <button class="button button-block button-calm" ng-click="login()">Login</button>
+
+      <div class="sign_up_div">
+        <label class="sign_up_label">Not a registered user yet?</label>
+        <a class="sign_up_href" ng-click="gotoState('signup')">Sign Up</a> 
+      </div>
+    
+  </ion-content>
+</ion-view>

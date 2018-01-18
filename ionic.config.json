@@ -1,0 +1,11 @@
+{
+  "name": "Attendance Scanner",
+  "app_id": "4744b49e",
+  "type": "ionic1",
+  "watchPatterns": [
+    "scss/**/*"
+  ],
+  "integrations": {
+    "cordova": {}
+  }
+}

@@ -1,0 +1,292 @@
+/* Empty. Add your own CSS if you like */
+.class_list_div{
+	text-align: center;
+	margin-bottom: 10%;
+	border-bottom: 1px solid black;
+}
+
+.class_list_label{
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.classlist{
+	text-align: center;
+}
+
+.classlist_item{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	font-size: 18px;
+	background-color: #80827c;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-radius: 5px;
+	color: #FFFFFF;
+}
+
+.menu_button{
+	text-align: center !important;
+}
+
+.qr_code_image_div{
+	margin-top: 10%;
+    text-align: center;
+}
+
+.qr_code_image{
+    max-width: 280px;
+    padding: 15px;
+    border: 1px solid black;
+}
+
+.error_field{
+	color: red;
+    margin-top: -4%;
+    margin-bottom: 0%;
+    border: none !important;
+    font-size: 14px;
+}
+
+.login_details_div{
+	margin-top: 50%;
+}
+
+.sign_up_div{
+    text-align: center;
+    margin-top: 10%;
+}
+
+.sign_up_label{
+	font-size: initial !important;
+}
+
+.signup_details_select_label{
+	font-size: 14px !important;
+	color: #AAAAAA;
+}
+
+.sign_up_href{
+	font-size: initial !important;
+}
+
+.signup_details_div{
+	margin-top: 10%;
+}
+
+.signup_details_label{
+	margin-bottom: 4%;
+}
+
+.no_registered_classes_div{
+    text-align: center;
+    margin-top: 50%;
+    margin-bottom: 50%;
+    font-size: x-large;
+    font-weight: bold;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: tomato;
+    padding: 5%;
+    box-shadow: 3px 3px 5px #888888;
+    border: 2px solid tomato;
+}
+
+.ion_content_border{
+	border: 4px solid tomato;
+}
+
+.class_detail_div{
+	padding: 2%;
+    background-color: #FFFFFF;
+    min-height: 80%;
+    width: 100%;
+}
+
+.class_detail_title_div{
+	text-align: center;
+}
+
+.class_detail_title_label{
+	font-size: 20px;
+}
+
+.class_detail_edit_btn{
+	float: right;
+}
+
+.class_detail_label{
+    display: block;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    color: #677482;
+    border-bottom: 1px solid #e1e6ea;
+}
+
+.class_detail_generate_qrcode_button{
+	margin-top: 8% !important;
+	margin-bottom: 0px !important;
+}
+
+.student_list_header{
+	text-align: center;
+	font-size: 20px;
+}
+
+.student_list_header_div{
+	margin-bottom: 5px;
+    border-bottom: 3px solid black;
+}
+
+.student_list_search_btn{
+	margin-left: 10%;
+}
+
+.student_list_search_input{
+	border: 1px solid rgb(228, 228, 228);
+    border-radius: 5px;
+    background-color: rgb(228, 228, 228);
+    margin-bottom: 2px;
+    width: 100%; 
+    padding-left: 11px !important;
+}
+
+.class_days_div{
+	text-align: center;
+	border: 1px solid darkgrey;
+	border-radius: 5px;
+    margin-bottom: 2%;
+}
+
+.class_days_div label{
+	border: none !important;
+	margin-top: 2% !important;
+}
+
+.generate_add_course_div{
+	text-align: center;
+	border: 1px solid darkgrey;
+	border-radius: 5px;
+    margin-bottom: 2%;
+}
+
+.generate_add_course_div label{
+	border: none !important;
+	margin-top: 2% !important;
+}
+
+.course_add_link_popover_view{
+	background-color: rgb(158, 158, 158);
+	/*border: 1px solid tomato;*/
+	min-height: 50%;
+}
+
+.course_add_link_popover_view .popover-arrow:after{
+	background-color: rgb(158, 158, 158);
+	/*border-bottom: 1px solid tomato;
+	border-left: 1px solid tomato;*/
+}
+
+.course_add_link_popover_heading_div{
+	background-color: #FFFFFF;
+	text-align: center;
+	padding: 5%;
+	margin-top: 2%;
+	margin-left: 5%;
+	margin-right: 5%;
+	border: 2px solid tomato;
+}
+
+.course_add_link_popover_heading_div label{
+	border-bottom: 2px solid #000000;
+}
+
+.course_add_link_popover_link_div{
+	margin: 5%;
+    text-align: center;
+    border: 2px solid tomato;
+    padding: 2%;
+    background-color: #FFFFFF;
+}
+
+.course_add_link_popover_copy_btn_div{
+	text-align: center;
+}
+
+.course_add_link_popover_copy_btn_div span{
+    margin-right: 5%;
+    margin-left: 5%;
+    border: 2px solid tomato !important;
+}
+
+.manual_atendance_class_list_item{
+	border-radius: 5px;
+}
+
+.add_course_details_div{
+	margin-top: 10%;
+}
+
+.add_course_details_label{
+	margin-bottom: 4%;
+}
+
+.add_course_details_label span{
+	font-size: 14px !important;
+	color: #AAAAAA;
+}
+
+.add_course_details_label input{
+	margin-left: 2%;
+	margin-right: 2%;
+	padding-right: 0px !important; 
+	border-bottom: 1px solid rgb(228, 228, 228);
+	background-color: #FFFFFF !important;
+	width: 100% !important;
+	text-align: center !important;
+}
+
+.add_course_details_label textarea{
+	margin-left: 2%;
+	margin-right: 2%;
+	padding-right: 0px !important; 
+	border-bottom: 1px solid rgb(228, 228, 228);
+	background-color: #FFFFFF !important;
+	width: 100% !important;
+	text-align: center !important;
+	resize: none !important;
+	padding-left: 2%;
+	border-radius: 0px !important; 
+}
+
+.course_days_offered_popup{
+	max-height: 50% !important;
+	top: 30% !important;
+}
+
+.course_days_offered_popup .popup .popup-head{
+	background-color: #889598 !important;
+}
+
+.course_days_offered_popup .popup .popup-buttons{
+	background-color: #889598 !important;
+}
+
+.course_days_offered_popup .popup{
+	border: 1px solid tomato;
+}
+
+.course_days_offered_popup .popup .popup-head h3{
+	color: #FFFFFF !important;
+}
+.ionic_datepicker_popup .popup{
+	border: 1px solid tomato;
+}
+
+.ionic_timepicker_popup .popup{
+	border: 1px solid tomato;	
+}
+
+.ionic_timepicker_popup .popup .popup-buttons{
+	margin-bottom: 1px;	
+}

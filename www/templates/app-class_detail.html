@@ -1,0 +1,92 @@
+<ion-view view-title="{{view_title}}">
+  <ion-content class="padding ion_content_border" >
+    <ion-refresher on-refresh="updateClassDetail()"></ion-refresher>
+    <div class="class_detail_div" ng-show="app_type == 'professor'" >
+
+            <div class="class_detail_title_div">
+                <label class="class_detail_title_label">{{class_obj.course_id}}</label>
+                <button ng-click="goToEditClassDetail()" class="button button-balanced button-small button-outline class_detail_edit_btn">Edit</button>
+            </div>
+        	<label class="class_detail_label">Course ID: {{class_obj.course_id}}</label>
+            <label class="class_detail_label">Course Name: {{class_obj.course_name}}</label>
+            <label class="class_detail_label">Term Offered: {{class_obj.Term_offered}}</label>
+            <label class="class_detail_label">Start Date: {{class_obj.start_date}}</label>
+            <label class="class_detail_label">End Date: {{class_obj.end_date}}</label>
+            <label class="class_detail_label">Course Days Offered: {{class_obj.course_days_offered}}</label>
+            <label class="class_detail_label">Class Timings: {{class_obj.course_timing}}</label>
+            <label class="class_detail_label">Number of Classes Conducted: {{class_obj.num_of_lectures_conducted}}</label>
+            <label class="class_detail_label">Number of Classes Completed: {{class_obj.no_of_classes_completed}}</label>
+            <div class="class_days_div" ng-show="class_obj.no_of_classes_completed > 0" ng-click="modal.show()">
+                <label class="class_detail_label">Click to view all days in session</label>
+            </div>
+            <div class="generate_add_course_div" ng-click="popover.show($event)">
+                <label class="class_detail_label">Generate Course Add Link</label>
+            </div>
+
+        <button class="button button-block button-dark class_detail_generate_qrcode_button" ng-click="checkClassTime('qrcode')">Generate Attendance QR Code</button>
+
+        <button class="button button-block button-dark class_detail_generate_qrcode_button" ng-click="checkClassTime('manual')">Manual Attendance</button>
+    </div>
+    <div class="class_detail_div" ng-show="app_type == 'student'" >
+            <div class="class_detail_title_div">
+                <label class="class_detail_title_label">{{class_obj.course_id}}</label>
+            </div>
+            <label class="class_detail_label">Course ID: {{class_obj.course_id}}</label>
+            <label class="class_detail_label">Course Name: {{class_obj.course_name}}</label>
+            <label class="class_detail_label">Term Offered: {{class_obj.Term_offered}}</label>
+            <label class="class_detail_label">Start Date: {{class_obj.start_date}}</label>
+            <label class="class_detail_label">End Date: {{class_obj.end_date}}</label>
+            <label class="class_detail_label">Course Days Offered: {{class_obj.course_days_offered}}</label>
+            <label class="class_detail_label">Class Timings: {{class_obj.course_timing}}</label>
+            <label class="class_detail_label">Number of Classes Conducted: {{class_obj.num_of_lectures_conducted}}</label>
+            <label class="class_detail_label">Number of Classes Attended: {{class_obj.no_of_days_attended}}</label>
+            <div class="class_days_div" ng-show="class_obj.no_of_days_attended > 0" ng-click="modal.show()">
+                <label class="class_detail_label">Click to view all days attended</label>
+            </div>
+
+        <button class="button button-block button-dark class_detail_generate_qrcode_button" ng-click="scanAttendanceQR()">Scan Attendance QR</button>
+    </div>
+
+    <script id="templates/class_days.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-dark">
+            <h1 ng-show="app_type == 'professor'" class="title">Days in Session</h1>
+            <h1 ng-show="app_type == 'student'" class="title">Days Attended</h1>
+            <button class="button button-clear button-primary" ng-click="modal.hide()">Close</button>
+        </ion-header-bar>
+        <ion-content class="padding">
+          <div class="list">
+            <div ng-show="app_type == 'professor'" >
+                <ion-list>
+                    <ion-item ng-repeat="date in class_obj.days_in_session_obj" >{{date}}</ion-item>
+                </ion-list>
+            </div>
+            <div ng-show="app_type == 'student'" >
+                 <ion-list>
+                    <ion-item  ng-repeat="date in class_obj.days_attended_obj">{{date}}</ion-item>
+                 </ion-list>
+            </div>
+          </div>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+
+    <script id="templates/popover.html" type="text/ng-template">
+      <ion-popover-view class="course_add_link_popover_view">
+        <ion-content>
+          <div class="course_add_link_popover_heading_div">
+              <label>Course Add Link</label>
+          </div>
+          <div class="course_add_link_popover_link_div">
+            <span>{{class_obj.course_add_link}}</span>
+          </div>
+          <div class="course_add_link_popover_copy_btn_div">
+              <span ng-show="linkcopied" class="button button-block button-light">Link Copied!</span>
+              <span ng-show="!linkcopied" ng-click="copyAddCourseLink()" class="button button-block button-light icon ion-ios-copy-outline"></span>
+          </div>
+        </ion-content>
+      </ion-popover-view>
+    </script>
+
+  </ion-content>
+</ion-view>

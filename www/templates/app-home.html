@@ -1,0 +1,16 @@
+<ion-view view-title="{{view_title}}">
+  <ion-content class="padding ion_content_border">
+    <ion-refresher on-refresh="updateClassList()"></ion-refresher>
+    <div class="class_list_div" ng-show="!no_registered_classes">
+    	<label class="class_list_label">Following are your classes:</label>
+    </div>
+    <div class="classlist" ng-repeat="class in classes track by class.class_id">
+		<div class="classlist_item" ng-click="classAttendance('{{class.class_id}}')">{{class.course_id}} - {{class.course_name}}</div>
+	</div>
+    <div class="no_registered_classes_div" ng-show="no_registered_classes">
+        <div>
+            Currently no classes that have been added.
+        </div>
+    </div>
+  </ion-content>
+</ion-view>

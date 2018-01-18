@@ -1,0 +1,92 @@
+<ion-view>
+<ion-nav-title>{{view_title}}</ion-nav-title>
+  <ion-content class="padding ion_content_border">
+     <div class="class_list_div">
+      <label ng-show="mode != 'edit'" class="class_list_label">New Course details:</label>
+      <label ng-show="mode == 'edit'" class="class_list_label">Course ID: {{class_obj.course_id}}</label>
+    </div>
+       <div class="list list-inset add_course_details_div">
+          <label ng-show="mode != 'edit'" class="item item-input add_course_details_label">
+          	<span>Course ID:</span>
+            <input type="text" placeholder="Eg: COMP 1234" ng-model="data.course_id">
+          </label>
+          <label class="item error_field" ng-show="err_course_id">
+              Please enter a Course ID.
+          </label>
+
+          <label class="item item-input add_course_details_label">
+          	<span>Course Name:</span>
+            <input type="text"  ng-model="data.course_name">
+          </label>
+          <label class="item error_field" ng-show="err_course_name">
+              Please enter a Course Name.
+          </label>
+
+          <label class="item item-input item-select add_course_details_label">
+            <span class="input-label">
+              Choose Course Term:
+            </span>
+            <select ng-options="term.label for term in course_terms track by term.value" ng-model="data.course_term"></select>
+          </label>
+          <label class="item error_field" ng-show="err_course_term">
+              Please select a Course Term.
+          </label>
+
+          <label class="item item-input add_course_details_label">
+          	<span>Course Start Date:</span>
+            <input type="text" readonly="true" ng-click="openDatePicker('start')" ng-model="data.course_start_date">
+          </label>
+          <label class="item error_field" ng-show="err_course_start_date">
+              Please select a Course Start Date.
+          </label>
+
+          <label class="item item-input add_course_details_label">
+          	<span>Course End Date:</span>
+            <input type="text" readonly="true" ng-click="openDatePicker('end')" ng-model="data.course_end_date">
+          </label>
+          <label class="item error_field" ng-show="err_course_end_date">
+              Please select a Course End Date.
+          </label>
+          <label class="item error_field" ng-show="err_course_end_date_valid">
+              End Date cannot be before Start Date.
+          </label>
+
+          <label class="item item-input add_course_details_label">
+          	<span>Class Start Time:</span>
+            <input type="text" readonly="true" ng-click="openTimePicker('start')" ng-model="data.course_start_time">
+          </label>
+          <label class="item error_field" ng-show="err_course_start_time">
+              Please select a Course Start Time.
+          </label>
+
+          <label class="item item-input add_course_details_label">
+          	<span>Class End Time:</span>
+            <input type="text" readonly="true" ng-click="openTimePicker('end')" ng-model="data.course_end_time">
+          </label>
+          <label class="item error_field" ng-show="err_course_end_time">
+              Please select a Course End Time.
+          </label>
+          <label class="item error_field" ng-show="err_course_end_time_valid">
+              End Time cannot be earlier than Start Time.
+          </label>
+
+          <label class="item item-input add_course_details_label">
+          	<span>Course Days:</span>
+	          <textarea type="text" rows="{{course_days_rows}}" readonly="true" ng-click="openCourseDaysOffered()" ng-model="data.course_days_offered"></textarea>
+	      </label>
+	      <label class="item error_field" ng-show="err_course_days_offered">
+              Please select Course Days Offered.
+          </label>
+
+          
+      </div>
+
+      <button ng-show="mode != 'edit'" class="button button-block button-dark" ng-click="addcourse()">Add Course</button>
+      <button ng-show="mode == 'edit'" class="button button-block button-dark" ng-click="updatecourse()">Update Course</button>
+
+      <script id="templates/courseSelectDaysTemplate.html" type="text/ng-template">
+            <ion-checkbox ng-repeat="day in days_of_week track by day.value" ng-model="day.isChecked">{{day.value}}</ion-checkbox>
+      </script>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,23 @@
+<ion-view view-title="{{view_title}}">
+  <ion-content class="padding ion_content_border" >
+    <ion-refresher on-refresh="updateClassStudentList()"></ion-refresher>
+    <ion-list >
+        <ion-list-header class="student_list_header">
+            <div class="student_list_header_div">Student List - {{class_obj.course_id}}<i class="icon ion-search placeholder-icon student_list_search_btn" ng-click="showhideSearch()"></i>
+            </div>
+            <div class="bar bar-header item-input-inset student_list_search_input" ng-show="is_visible_search">
+              <input type="text" ng-focus="true" class="student_list_search_input" placeholder="Search" ng-model="search.student" />
+              <i ng-if="search.student.length" class="icon ion-ios-close placeholder-icon" ng-click="clearSearch()">
+              </i>
+            </div>
+        </ion-list-header>
+        <ion-item class="manual_atendance_class_list_item" collection-repeat=" student in class_student_list | orderBy: 'student_name' | filter: search.student ">
+            {{student.student_name}}
+            <ion-option-button class="button-balanced" ng-click="confirmMarkAttendance(student.student_id, student.student_name)">
+                Mark Present
+            </ion-option-button>
+        </ion-item>
+
+      </ion-list>
+  </ion-content>
+</ion-view>
